@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailViewController : UIViewController
+@class HKSampleType;
 
-@property (strong, nonatomic) id detailItem;
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@interface DetailViewController : UITableViewController
+
+@property (strong, nonatomic) HKSampleType *sampleType;
+
+- (IBAction)addTapped:(id)sender;
 
 @end
-

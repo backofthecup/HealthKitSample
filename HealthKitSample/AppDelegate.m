@@ -21,12 +21,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    HKQuantityType *weightType = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierBodyMass];
-    HKQuantityType *bloodGlucose = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierBloodGlucose];
-
-    [[[HKHealthStore alloc] init] requestAuthorizationToShareTypes:[NSSet setWithObjects:weightType, bloodGlucose, nil] readTypes:[NSSet setWithObjects:weightType,bloodGlucose, nil] completion:^(BOOL success, NSError *error) {
-        NSLog(@"..HealthKit authorization granted.....");
-    }];
     
     return YES;
 }
