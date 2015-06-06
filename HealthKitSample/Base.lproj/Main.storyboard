@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rS3-R9-Ivy">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Master-->
@@ -39,7 +40,7 @@
                                             <rect key="frame" x="15" y="0.0" width="270" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                     </subviews>
@@ -79,7 +80,7 @@
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tmt-1W-pu2">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rjD-zd-Koe">
@@ -101,7 +102,7 @@
                     <navigationItem key="navigationItem" title="Data" id="j19-dP-xqq">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="X0s-MH-Z7p">
                             <connections>
-                                <action selector="addTapped:" destination="oZB-fh-Vve" id="A1o-WV-IxC"/>
+                                <segue destination="H4Y-N5-kxG" kind="show" id="qsL-Dc-ewP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -110,6 +111,70 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oXM-dC-qjH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1298" y="64"/>
+        </scene>
+        <!--Add Data Point-->
+        <scene sceneID="FKn-gh-n24">
+            <objects>
+                <tableViewController id="H4Y-N5-kxG" customClass="AddDataPointViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="80" sectionHeaderHeight="10" sectionFooterHeight="10" id="YOa-wz-CaU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                        <sections>
+                            <tableViewSection id="P4a-LW-2Ht">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="HCE-Zf-TjA">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HCE-Zf-TjA" id="Wok-eb-BfA">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="lbs" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BHg-41-zvg">
+                                                    <rect key="frame" x="21" y="5" width="558" height="70"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                    <connections>
+                                                        <action selector="editingChanged:" destination="H4Y-N5-kxG" eventType="editingChanged" id="PTC-O3-qfw"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="BHg-41-zvg" secondAttribute="bottom" constant="-4" id="696-SX-1m3"/>
+                                                <constraint firstItem="BHg-41-zvg" firstAttribute="leading" secondItem="Wok-eb-BfA" secondAttribute="leadingMargin" constant="13" id="PCb-kH-jrK"/>
+                                                <constraint firstItem="BHg-41-zvg" firstAttribute="top" secondItem="Wok-eb-BfA" secondAttribute="topMargin" constant="-3" id="PzV-cP-1vZ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="BHg-41-zvg" secondAttribute="trailing" constant="13" id="e70-3F-mGx"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="H4Y-N5-kxG" id="gLV-eo-iiu"/>
+                            <outlet property="delegate" destination="H4Y-N5-kxG" id="s6G-n9-jQe"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Add Data Point" id="jhd-3g-z7q">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="OS2-tW-d4U">
+                            <connections>
+                                <action selector="cancelTapped:" destination="H4Y-N5-kxG" id="jqo-SH-TmZ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="save" id="AbI-c9-Xsb">
+                            <connections>
+                                <action selector="saveTapped:" destination="H4Y-N5-kxG" id="0AR-C1-CN0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="dataTextField" destination="BHg-41-zvg" id="I46-09-XOm"/>
+                        <outlet property="saveButton" destination="AbI-c9-Xsb" id="CH9-bx-CHR"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="obL-53-WVl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2148" y="-172"/>
         </scene>
     </scenes>
 </document>

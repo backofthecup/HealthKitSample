@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89190AE71B21275B00C57CA7 /* AddDataPointViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89190AE61B21275B00C57CA7 /* AddDataPointViewController.m */; };
 		89C8768D1B1FE48E00F21631 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C8768C1B1FE48E00F21631 /* DetailViewController.m */; };
 		89E1394D1B1F7A9500AB5F08 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E1394C1B1F7A9500AB5F08 /* main.m */; };
 		89E139501B1F7A9500AB5F08 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E1394F1B1F7A9500AB5F08 /* AppDelegate.m */; };
@@ -29,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		89190AE51B21275B00C57CA7 /* AddDataPointViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddDataPointViewController.h; sourceTree = "<group>"; };
+		89190AE61B21275B00C57CA7 /* AddDataPointViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDataPointViewController.m; sourceTree = "<group>"; };
 		89C8768B1B1FE48E00F21631 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		89C8768C1B1FE48E00F21631 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		89E139471B1F7A9500AB5F08 /* HealthKitSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthKitSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +92,8 @@
 		89E139491B1F7A9500AB5F08 /* HealthKitSample */ = {
 			isa = PBXGroup;
 			children = (
+				89190AE51B21275B00C57CA7 /* AddDataPointViewController.h */,
+				89190AE61B21275B00C57CA7 /* AddDataPointViewController.m */,
 				89E1394E1B1F7A9500AB5F08 /* AppDelegate.h */,
 				89E1394F1B1F7A9500AB5F08 /* AppDelegate.m */,
 				89C8768B1B1FE48E00F21631 /* DetailViewController.h */,
@@ -240,6 +245,7 @@
 				89E139531B1F7A9500AB5F08 /* MasterViewController.m in Sources */,
 				89E1394D1B1F7A9500AB5F08 /* main.m in Sources */,
 				89C8768D1B1FE48E00F21631 /* DetailViewController.m in Sources */,
+				89190AE71B21275B00C57CA7 /* AddDataPointViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

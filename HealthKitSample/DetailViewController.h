@@ -8,12 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@class HKSampleType;
+@class HKSampleType, HKUnit;
 
 @interface DetailViewController : UITableViewController
 
 @property (strong, nonatomic) HKSampleType *sampleType;
-
-- (IBAction)addTapped:(id)sender;
+@property (strong, nonatomic) HKUnit *preferredUnit;
 
 @end

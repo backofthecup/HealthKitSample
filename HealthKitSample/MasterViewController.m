@@ -14,6 +14,7 @@
 
 @property HKHealthStore *healthStore;
 @property NSDictionary *objects;
+@property NSDictionary *preferredUnits;
 
 @end
 
@@ -28,8 +29,9 @@
     
     HKQuantityType *weight = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierBodyMass];
     HKQuantityType *bloodGlucose = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierBloodGlucose];
+    HKQuantityType *steps = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierStepCount];
     
-    NSSet *shareTypes = [NSSet setWithObjects:weight, bloodGlucose, nil];
+    NSSet *shareTypes = [NSSet setWithObjects:weight, bloodGlucose, steps, nil];
     
     self.healthStore = [[HKHealthStore alloc] init];
     [self.healthStore requestAuthorizationToShareTypes:shareTypes readTypes:shareTypes completion:^(BOOL success, NSError *error) {
@@ -37,8 +39,15 @@
             NSLog(@"..HealthKit authorization granted.....");
         }
     }];
+    
+    // get the preferred units for the quantity types
+    [self.healthStore preferredUnitsForQuantityTypes:shareTypes completion:^(NSDictionary *preferredUnits, NSError *error) {
+        NSLog(@"..preferred units.... %@", preferredUnits);
+        self.preferredUnits = preferredUnits;
+        
+    }];
 
-    self.objects = @{weight : @"Weight", bloodGlucose : @"Blood Glucose"};
+    self.objects = @{weight : @"Weight", bloodGlucose : @"Blood Glucose", steps : @"Steps"};
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,8 +60,15 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     UITableViewCell *cell = sender;
     NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
-    HKQuantityType *quantityType = self.objects.allKeys[indexPath.row];
+    HKSampleType *quantityType = self.objects.allKeys[indexPath.row];
+    
+    UIViewController *viewController = segue.destinationViewController;
+    viewController.navigationItem.title = self.objects.allValues[indexPath.row];
     [segue.destinationViewController setValue:quantityType forKey:@"sampleType"];
+
+    // set the preferred unit
+    HKUnit *preferredUnit = self.preferredUnits[quantityType];
+    [segue.destinationViewController setValue:preferredUnit forKey:@"preferredUnit"];
 }
 
 
