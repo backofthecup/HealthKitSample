@@ -15,6 +15,7 @@
 @property (strong, nonatomic) NSArray *results;
 @property (strong, nonatomic) HKHealthStore *healthStore;
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
+@property (strong, nonatomic) NSNumberFormatter *numberFormatter;
 
 - (void)refreshData;
 
@@ -26,6 +27,9 @@
     [super viewDidLoad];
     
     self.healthStore = [[HKHealthStore alloc] init];
+    
+    self.numberFormatter = [[NSNumberFormatter alloc] init];
+    self.numberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
     
     self.dateFormatter = [[NSDateFormatter alloc] init];
     self.dateFormatter.dateFormat = @"dd MMM yyyy HH:mm:ss";
@@ -82,7 +86,10 @@
     
     HKQuantitySample *sample = self.results[indexPath.row];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%1.2f %@", [sample.quantity doubleValueForUnit:self.preferredUnit], self.preferredUnit.unitString];
+    double doubleValue = [sample.quantity doubleValueForUnit:self.preferredUnit];
+    NSNumber *number = [NSNumber numberWithDouble:doubleValue];
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", [self.numberFormatter stringFromNumber:number], self.preferredUnit.unitString];
     cell.detailTextLabel.text = [self.dateFormatter stringFromDate:sample.startDate];
     
     return cell;
