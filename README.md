@@ -1,5 +1,5 @@
 # HealthKitSample
-This sample project reads & writes data points to HealthKit. It uses 3 measurements: body mass, blood glucose & step count. On the initial run, the HealthKit authorization view will ask the user for authorization. 
+This sample project reads & writes data points to HealthKit. It uses 3 categories: Blood Glucose, Steps & Weight. On the initial run, iOS will ask user to grant read and write access to HealthKit.
 
 
 ## Screenshots
