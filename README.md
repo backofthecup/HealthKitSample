@@ -1,5 +1,6 @@
 # HealthKitSample
-This sample project shows how to read/write to HealthKit. 
+This sample project shows how to read/write to HealthKit. It tracks 3 measurements: BodyMass, BloodGlucose & Step count
+
 
 ## Screenshots
 ![hks-01](https://cloud.githubusercontent.com/assets/4623150/8018239/84b4d9a6-0bd6-11e5-8cbc-ec68f3d690b2.png)
@@ -9,9 +10,8 @@ This sample project shows how to read/write to HealthKit.
 
 ## Examples
 
-This example tracks only 3 measurements: BodyMass, BloodGlucose & Step count
 
-To add more measures modify the following lines according in `MasterViewController viewDidLoad`:
+To add more measurements, modify the following lines according in `MasterViewController viewDidLoad`:
 
 ````
 // create quantity types we care about
