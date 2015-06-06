@@ -1,5 +1,5 @@
 # HealthKitSample
-This sample project reads & writes data points to HealthKit. It uses 3 categories: Blood Glucose, Steps & Weight. On the initial run, iOS will ask user to grant read and write access to HealthKit.
+This sample project reads & writes data points to `HealthKit`. It uses 3 categories: Blood Glucose, Steps & Weight. On the initial run, iOS will ask user to grant read and write access to `HealthKit`.
 
 
 ## Screenshots
