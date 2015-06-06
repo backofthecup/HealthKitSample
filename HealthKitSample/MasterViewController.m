@@ -83,7 +83,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
     NSArray *keys = self.objects.allKeys;
     cell.textLabel.text = self.objects[keys[indexPath.row]];
     return cell;

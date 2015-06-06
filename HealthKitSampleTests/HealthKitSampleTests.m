@@ -25,9 +25,13 @@
     [super tearDown];
 }
 
-- (void)testExample {
+- (void)testMasterViewController {
     // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UITableViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"MasterViewController"];
+    
+    UITableViewCell *cell = [controller.tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    XCTAssertNotNil(cell, @"Table view 'Cell' does not exist");
 }
 
 - (void)testPerformanceExample {
