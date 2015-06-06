@@ -9,10 +9,10 @@ This sample project reads & writes data points to HealthKit. It uses 3 categorie
 
 ![hk-04](https://cloud.githubusercontent.com/assets/4623150/8018243/8d5eddf4-0bd6-11e5-955c-5bff1d53b263.png)
 
+
 ## Examples
 
-
-To add more measurements, modify the following lines according in `MasterViewController` `viewDidLoad`:
+To add more categories, modify the following lines accordingly in `MasterViewController` `viewDidLoad`:
 
 ````
 // create quantity types we care about
