@@ -50,7 +50,7 @@
     BOOL performSegue = YES;
     HKAuthorizationStatus status = [self.healthStore authorizationStatusForType:self.sampleType];
     
-    if (status == HKAuthorizationStatusSharingDenied) {
+    if (status != HKAuthorizationStatusSharingAuthorized) {
         performSegue = NO;
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"No Access" message:@"You do not have write access to this data. To enable, open the Health app > Sources and enable permissions for this app." preferredStyle:UIAlertControllerStyleAlert];
         
