@@ -1,5 +1,5 @@
 # HealthKitSample
-This sample project shows how to read/write to HealthKit. It tracks 3 measurements: BodyMass, BloodGlucose & Step count
+This sample project reads & writes data points to HealthKit. It uses 3 measurements: body mass, blood glucose & step count. On the initial run, the HealthKit authorization view will ask the user for authorization. 
 
 
 ## Screenshots
@@ -11,7 +11,7 @@ This sample project shows how to read/write to HealthKit. It tracks 3 measuremen
 ## Examples
 
 
-To add more measurements, modify the following lines according in `MasterViewController viewDidLoad`:
+To add more measurements, modify the following lines according in `MasterViewController` `viewDidLoad`:
 
 ````
 // create quantity types we care about
