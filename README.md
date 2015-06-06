@@ -20,7 +20,7 @@ HKQuantityType *weight = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeI
 HKQuantityType *bloodGlucose = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierBloodGlucose];
 HKQuantityType *steps = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierStepCount];
 
-// authorizations types
+// authorization types
 NSSet *shareTypes = [NSSet setWithObjects:weight, bloodGlucose, steps, nil];
 
 ````
