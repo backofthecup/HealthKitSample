@@ -5,7 +5,19 @@ iOS Health Kit Authorization View
 
 ![hks-01](https://cloud.githubusercontent.com/assets/4623150/8018167/2df05c60-0bd3-11e5-9081-4e34dc29a354.png)
 
-The table view shows a list of measurements. To add more measures modify the following line in 'MasterViewController':
+The table view shows a list of measurements. To add more measures modify the following line in `MasterViewController viewDidLoad`:
+
+````
+// create quantity types we care about
+HKQuantityType *weight = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierBodyMass];
+HKQuantityType *bloodGlucose = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierBloodGlucose];
+HKQuantityType *steps = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierStepCount];
+
+// request authorization
+NSSet *shareTypes = [NSSet setWithObjects:weight, bloodGlucose, steps, nil];
+
+````
+
 
 ![hk-02](https://cloud.githubusercontent.com/assets/4623150/8018168/3010cc14-0bd3-11e5-9b87-ba7db328e0b3.png)
 
