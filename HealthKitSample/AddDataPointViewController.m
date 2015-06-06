@@ -24,7 +24,9 @@
     self.healthStore = [[HKHealthStore alloc] init];
 
     // update placeholder text
-    self.dataTextField.placeholder = self.preferredUnit.unitString;
+    self.unitsLabel.text = self.preferredUnit.unitString;
+    
+    [self.dataTextField becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {

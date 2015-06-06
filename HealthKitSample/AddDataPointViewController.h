@@ -14,6 +14,7 @@
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 @property (strong, nonatomic) IBOutlet UITextField *dataTextField;
+@property (strong, nonatomic) IBOutlet UILabel *unitsLabel;
 @property (strong, nonatomic) HKQuantityType *quantityType;
 @property (strong, nonatomic) HKUnit *preferredUnit;
 

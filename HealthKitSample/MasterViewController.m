@@ -27,26 +27,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // create quantity types we care about
     HKQuantityType *weight = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierBodyMass];
     HKQuantityType *bloodGlucose = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierBloodGlucose];
     HKQuantityType *steps = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierStepCount];
     
+    // authorization types
     NSSet *shareTypes = [NSSet setWithObjects:weight, bloodGlucose, steps, nil];
     
     self.healthStore = [[HKHealthStore alloc] init];
     [self.healthStore requestAuthorizationToShareTypes:shareTypes readTypes:shareTypes completion:^(BOOL success, NSError *error) {
         if (success) {
             NSLog(@"..HealthKit authorization granted.....");
+            // get the preferred units for the quantity types
+            [self.healthStore preferredUnitsForQuantityTypes:shareTypes completion:^(NSDictionary *preferredUnits, NSError *error) {
+                NSLog(@"..preferred units.... %@", preferredUnits);
+                self.preferredUnits = preferredUnits;
+            }];
         }
     }];
     
-    // get the preferred units for the quantity types
-    [self.healthStore preferredUnitsForQuantityTypes:shareTypes completion:^(NSDictionary *preferredUnits, NSError *error) {
-        NSLog(@"..preferred units.... %@", preferredUnits);
-        self.preferredUnits = preferredUnits;
-        
-    }];
-
     self.objects = @{weight : @"Weight", bloodGlucose : @"Blood Glucose", steps : @"Steps"};
 }
 

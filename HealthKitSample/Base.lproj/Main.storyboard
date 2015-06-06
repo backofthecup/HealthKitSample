@@ -128,20 +128,32 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HCE-Zf-TjA" id="Wok-eb-BfA">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="lbs" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BHg-41-zvg">
-                                                    <rect key="frame" x="21" y="5" width="558" height="70"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BHg-41-zvg">
+                                                    <rect key="frame" x="21" y="5" width="469" height="70"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     <connections>
                                                         <action selector="editingChanged:" destination="H4Y-N5-kxG" eventType="editingChanged" id="PTC-O3-qfw"/>
                                                     </connections>
                                                 </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lbs" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z70-L6-ATB">
+                                                    <rect key="frame" x="506" y="5" width="71" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="71" id="Kx0-27-g2I"/>
+                                                        <constraint firstAttribute="height" constant="70" id="eya-GK-pp9"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="BHg-41-zvg" secondAttribute="bottom" constant="-4" id="696-SX-1m3"/>
+                                                <constraint firstItem="Z70-L6-ATB" firstAttribute="top" secondItem="BHg-41-zvg" secondAttribute="top" id="DNU-yD-fQL"/>
                                                 <constraint firstItem="BHg-41-zvg" firstAttribute="leading" secondItem="Wok-eb-BfA" secondAttribute="leadingMargin" constant="13" id="PCb-kH-jrK"/>
                                                 <constraint firstItem="BHg-41-zvg" firstAttribute="top" secondItem="Wok-eb-BfA" secondAttribute="topMargin" constant="-3" id="PzV-cP-1vZ"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="BHg-41-zvg" secondAttribute="trailing" constant="13" id="e70-3F-mGx"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Z70-L6-ATB" secondAttribute="trailing" constant="15" id="SHm-Gr-p4u"/>
+                                                <constraint firstItem="Z70-L6-ATB" firstAttribute="leading" secondItem="BHg-41-zvg" secondAttribute="trailing" constant="16" id="gr9-Cc-kEP"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>

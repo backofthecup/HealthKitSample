@@ -30,7 +30,7 @@
     self.dateFormatter = [[NSDateFormatter alloc] init];
     self.dateFormatter.dateFormat = @"dd MMM yyyy HH:mm:ss";
 
-    // get updates for this quantity type
+    // observe updates for this quantity type
     HKObserverQuery *query = [[HKObserverQuery alloc] initWithSampleType:self.sampleType predicate:nil updateHandler:^(HKObserverQuery *query, HKObserverQueryCompletionHandler completionHandler,NSError *error) {
          if (!error) {
              [self refreshData];
@@ -82,7 +82,7 @@
     
     HKQuantitySample *sample = self.results[indexPath.row];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%1.0f %@", [sample.quantity doubleValueForUnit:self.preferredUnit], self.preferredUnit.unitString];
+    cell.textLabel.text = [NSString stringWithFormat:@"%1.2f %@", [sample.quantity doubleValueForUnit:self.preferredUnit], self.preferredUnit.unitString];
     cell.detailTextLabel.text = [self.dateFormatter stringFromDate:sample.startDate];
     
     return cell;
