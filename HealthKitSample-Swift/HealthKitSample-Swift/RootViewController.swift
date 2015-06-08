@@ -55,17 +55,12 @@ class RootViewController: UITableViewController {
 
     // MARK: - Segues
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showDetail" {
-            if let indexPath = self.tableView.indexPathForSelectedRow() {
-                let object = objects[indexPath.row] as HKQuantityType
-                
-                let sampleType = self.objects[indexPath.row]
-                (segue.destinationViewController as! DetailViewController).sampleType = sampleType
+        let cell = sender as! UITableViewCell
+        let indexPath = self.tableView.indexPathForCell(cell)
+        let sampleType = self.objects[indexPath!.row]
 
-
-            (segue.destinationViewController as! DetailViewController).preferredUnit = self.preferredUnits[sampleType] as! HKUnit
-            }
-        }
+        (segue.destinationViewController as! DetailViewController).sampleType = sampleType
+        (segue.destinationViewController as! DetailViewController).preferredUnit = self.preferredUnits[sampleType] as! HKUnit
     }
 
     // MARK: - Table View
@@ -85,21 +80,6 @@ class RootViewController: UITableViewController {
         cell.textLabel!.text = object.identifier
         return cell
     }
-
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            objects.removeAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-        }
-    }
-
 
 }
 

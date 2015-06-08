@@ -11,7 +11,7 @@ import UIKit
 
 class DetailViewController: UITableViewController {
 
-    var sampleType : HKSampleType!
+    var sampleType : HKQuantityType!
     var preferredUnit: HKUnit!
     
     var results = [HKQuantitySample]()
@@ -57,8 +57,9 @@ class DetailViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        var quantityType = self.sampleType as HKQuantityType
+        (segue.destinationViewController as! AddDataPointViewController).quantityType = quantityType
+        (segue.destinationViewController as! AddDataPointViewController).preferredUnit = self.preferredUnit
     }
 
     
