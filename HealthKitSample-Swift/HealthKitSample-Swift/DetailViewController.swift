@@ -62,6 +62,20 @@ class DetailViewController: UITableViewController {
         (segue.destinationViewController as! AddDataPointViewController).preferredUnit = self.preferredUnit
     }
 
+    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+        var perform = true
+        let status = self.healthStore.authorizationStatusForType(self.sampleType)
+        if (status != HKAuthorizationStatus.SharingAuthorized) {
+            perform = false
+
+            let alert = UIAlertController(title: "No Access", message: "You do not have write access to this data. To enable, open the Health app > Sources and enable permissions for this app.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        
+        return perform
+    }
     
     // MARK: - PrivateMethods
     func refreshData() {
