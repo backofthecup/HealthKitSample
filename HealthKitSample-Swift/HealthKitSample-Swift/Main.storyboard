@@ -23,7 +23,7 @@
         <!--Master-->
         <scene sceneID="VgW-fR-Quf">
             <objects>
-                <tableViewController storyboardIdentifier="MasterViewController" title="Master" id="pGg-6v-bdr" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MasterViewController" title="Master" id="pGg-6v-bdr" customClass="RootViewController" customModule="HealthKitSample_Swift" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="mLL-gJ-YKr">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -66,7 +66,7 @@
         <!--Data-->
         <scene sceneID="A5d-ks-j7y">
             <objects>
-                <tableViewController id="oZB-fh-Vve" customClass="DetailViewController" sceneMemberID="viewController">
+                <tableViewController id="oZB-fh-Vve" customClass="DetailViewController" customModule="HealthKitSample_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="zbF-CO-yGa">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -115,7 +115,7 @@
         <!--Add Data Point-->
         <scene sceneID="FKn-gh-n24">
             <objects>
-                <tableViewController id="H4Y-N5-kxG" customClass="AddDataPointViewController" sceneMemberID="viewController">
+                <tableViewController id="H4Y-N5-kxG" customClass="AddDataPointViewController" customModule="HealthKitSample_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="80" sectionHeaderHeight="10" sectionFooterHeight="10" id="YOa-wz-CaU">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -133,7 +133,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     <connections>
-                                                        <action selector="editingChanged:" destination="H4Y-N5-kxG" eventType="editingChanged" id="PTC-O3-qfw"/>
+                                                        <action selector="editingChanged:" destination="H4Y-N5-kxG" eventType="editingChanged" id="leM-Py-wjI"/>
                                                     </connections>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lbs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z70-L6-ATB">
@@ -169,20 +169,20 @@
                     <navigationItem key="navigationItem" title="Add Data Point" id="jhd-3g-z7q">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="OS2-tW-d4U">
                             <connections>
-                                <action selector="cancelTapped:" destination="H4Y-N5-kxG" id="jqo-SH-TmZ"/>
+                                <action selector="cancelTapped:" destination="H4Y-N5-kxG" id="u6N-DR-N5w"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="save" id="AbI-c9-Xsb">
                             <connections>
-                                <action selector="saveTapped:" destination="H4Y-N5-kxG" id="0AR-C1-CN0"/>
+                                <action selector="saveTapped:" destination="H4Y-N5-kxG" id="0Fr-pt-Lwh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="dataTextField" destination="BHg-41-zvg" id="I46-09-XOm"/>
-                        <outlet property="saveButton" destination="AbI-c9-Xsb" id="CH9-bx-CHR"/>
-                        <outlet property="unitsLabel" destination="Z70-L6-ATB" id="bSG-bf-KjM"/>
+                        <outlet property="dataTextField" destination="BHg-41-zvg" id="gfG-XT-OLL"/>
+                        <outlet property="saveButton" destination="AbI-c9-Xsb" id="lVj-68-aoS"/>
+                        <outlet property="unitsLabel" destination="Z70-L6-ATB" id="x9v-jd-Pk2"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="obL-53-WVl" userLabel="First Responder" sceneMemberID="firstResponder"/>
