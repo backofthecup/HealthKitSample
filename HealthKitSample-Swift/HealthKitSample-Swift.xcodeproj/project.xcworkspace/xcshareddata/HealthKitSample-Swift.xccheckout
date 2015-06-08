@@ -5,20 +5,20 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>91FCC1C4-9731-4BCC-A09A-57C33839030F</string>
+	<string>6FF45EDB-FB26-4444-97AF-CC251676C4A6</string>
 	<key>IDESourceControlProjectName</key>
-	<string>HealthKitSample</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>ED178D830ACBE6570D74C5D195D918C3497259C2</key>
 		<string>https://github.com/backofthecup/HealthKitSample.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>HealthKitSample.xcworkspace</string>
+	<string>HealthKitSample-Swift/HealthKitSample-Swift.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>ED178D830ACBE6570D74C5D195D918C3497259C2</key>
-		<string>..</string>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/backofthecup/HealthKitSample.git</string>

@@ -1,7 +1,139 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <Group
+      location = "group:HealthKitSample-ObjC"
+      name = "HealthKitSample-ObjC">
+      <Group
+         location = "group:HealthKitSample"
+         name = "HealthKitSample">
+         <FileRef
+            location = "group:AddDataPointViewController.h">
+         </FileRef>
+         <FileRef
+            location = "group:AddDataPointViewController.m">
+         </FileRef>
+         <FileRef
+            location = "group:AppDelegate.h">
+         </FileRef>
+         <FileRef
+            location = "group:AppDelegate.m">
+         </FileRef>
+         <Group
+            location = "group:Base.lproj"
+            name = "Base.lproj">
+            <FileRef
+               location = "group:LaunchScreen.xib">
+            </FileRef>
+            <FileRef
+               location = "group:Main.storyboard">
+            </FileRef>
+         </Group>
+         <FileRef
+            location = "group:DetailViewController.h">
+         </FileRef>
+         <FileRef
+            location = "group:DetailViewController.m">
+         </FileRef>
+         <FileRef
+            location = "group:HealthKitSample.entitlements">
+         </FileRef>
+         <Group
+            location = "group:Images.xcassets"
+            name = "Images.xcassets">
+            <Group
+               location = "group:AppIcon.appiconset"
+               name = "AppIcon.appiconset">
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+            </Group>
+         </Group>
+         <FileRef
+            location = "group:Info.plist">
+         </FileRef>
+         <FileRef
+            location = "group:main.m">
+         </FileRef>
+         <FileRef
+            location = "group:RootViewController.h">
+         </FileRef>
+         <FileRef
+            location = "group:RootViewController.m">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:HealthKitSample.xcodeproj">
+      </FileRef>
+      <Group
+         location = "group:HealthKitSampleTests"
+         name = "HealthKitSampleTests">
+         <FileRef
+            location = "group:HealthKitSampleTests.m">
+         </FileRef>
+         <FileRef
+            location = "group:Info.plist">
+         </FileRef>
+      </Group>
+   </Group>
+   <Group
+      location = "group:HealthKitSample-Swift"
+      name = "HealthKitSample-Swift">
+      <Group
+         location = "group:HealthKitSample-Swift"
+         name = "HealthKitSample-Swift">
+         <FileRef
+            location = "group:AppDelegate.swift">
+         </FileRef>
+         <Group
+            location = "group:Base.lproj"
+            name = "Base.lproj">
+            <FileRef
+               location = "group:LaunchScreen.xib">
+            </FileRef>
+            <FileRef
+               location = "group:Main.storyboard">
+            </FileRef>
+         </Group>
+         <FileRef
+            location = "group:DetailViewController.swift">
+         </FileRef>
+         <Group
+            location = "group:Images.xcassets"
+            name = "Images.xcassets">
+            <Group
+               location = "group:AppIcon.appiconset"
+               name = "AppIcon.appiconset">
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+            </Group>
+         </Group>
+         <FileRef
+            location = "group:Info.plist">
+         </FileRef>
+         <FileRef
+            location = "group:MasterViewController.swift">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:HealthKitSample-Swift.xcodeproj">
+      </FileRef>
+      <Group
+         location = "group:HealthKitSample-SwiftTests"
+         name = "HealthKitSample-SwiftTests">
+         <FileRef
+            location = "group:HealthKitSample_SwiftTests.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Info.plist">
+         </FileRef>
+      </Group>
+   </Group>
    <FileRef
-      location = "container:HealthKitSample.xcodeproj">
+      location = "group:LICENSE">
+   </FileRef>
+   <FileRef
+      location = "group:README.md">
    </FileRef>
 </Workspace>
