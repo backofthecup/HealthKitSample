@@ -1,5 +1,5 @@
 //
-//  MasterViewController.h
+//  RootViewController.h
 //  HealthKitSample
 //
 //  Created by Eric Mansfield on 6/3/15.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MasterViewController : UITableViewController
+@interface RootViewController : UITableViewController
 
 
 @end

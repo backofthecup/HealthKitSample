@@ -1,16 +1,16 @@
 //
-//  MasterViewController.m
+//  RootViewController.m
 //  HealthKitSample
 //
 //  Created by Eric Mansfield on 6/3/15.
 //  Copyright (c) 2015 Eric Mansfield. All rights reserved.
 //
 
-#import "MasterViewController.h"
+#import "RootViewController.h"
 
 @import HealthKit;
 
-@interface MasterViewController ()
+@interface RootViewController ()
 
 @property HKHealthStore *healthStore;
 @property NSDictionary *objects;
@@ -18,7 +18,7 @@
 
 @end
 
-@implementation MasterViewController
+@implementation RootViewController
 
 - (void)awakeFromNib {
     [super awakeFromNib];
