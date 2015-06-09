@@ -38,7 +38,9 @@ class AddDataPointViewController: UITableViewController {
     // MARK: - IBActions
     @IBAction func editingChanged(sender: AnyObject) {
         var textField = sender as! UITextField
-        if (textField.text.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0) {
+        let value = textField.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        
+        if (count(value) > 0) {
             self.saveButton.enabled = true
         }
         else {
@@ -53,16 +55,17 @@ class AddDataPointViewController: UITableViewController {
         let date = NSDate()
         
         let quantitySample = HKQuantitySample(type: self.quantityType, quantity: quantity, startDate: date, endDate: date)
-        self.healthStore.saveObject(quantitySample, withCompletion: { (success, error) -> Void in
+        
+        
+        self.healthStore.saveObject(quantitySample) { (success, error) -> Void in
             if (success) {
                 NSLog("Saved to healthkiit.....")
                 
                 NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
                     self.navigationController?.popViewControllerAnimated(true)
                 })
-                
             }
-        })
+        }
     }
     
     @IBAction func cancelTapped(sender: AnyObject) {

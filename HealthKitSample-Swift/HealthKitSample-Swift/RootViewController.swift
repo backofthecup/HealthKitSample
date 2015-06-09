@@ -32,8 +32,8 @@ class RootViewController: UITableViewController {
         self.healthStore.requestAuthorizationToShareTypes(healthKitTypes as Set, readTypes:healthKitTypes as Set) { (success, error) -> Void in
             if (success) {
                 NSLog("HealthKit authorization success...")
-                self.healthStore.preferredUnitsForQuantityTypes(healthKitTypes as Set, completion: { (preferredUnits: [NSObject : AnyObject]!, error) -> Void in
-                    
+                
+                self.healthStore.preferredUnitsForQuantityTypes(healthKitTypes as Set, completion: { (preferredUnits, error) -> Void in
                     if (error == nil) {
                         NSLog("...preferred units %@", preferredUnits)
                         self.preferredUnits = preferredUnits

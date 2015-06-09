@@ -24,11 +24,12 @@ class DetailViewController: UITableViewController {
         self.dateFormatter.dateFormat = "dd MMM yyyy HH:mm:ss"
         
         // observe updates for this quantity type
-        let query = HKObserverQuery(sampleType: self.sampleType, predicate: nil, updateHandler: { (query, completionHandler, error) -> Void in
+        let query = HKObserverQuery(sampleType: self.sampleType, predicate: nil) { (query, completionHandler, error) -> Void in
             if (error == nil) {
                 self.refreshData()
             }
-        })
+
+        }
         
         self.healthStore.executeQuery(query)
     }
@@ -61,13 +62,10 @@ class DetailViewController: UITableViewController {
         let dateString = self.dateFormatter.stringFromDate(sample.startDate)
         cell.detailTextLabel!.text = dateString
 
-
         return cell
     }
 
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         var quantityType = self.sampleType as HKQuantityType
         (segue.destinationViewController as! AddDataPointViewController).quantityType = quantityType
