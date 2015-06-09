@@ -17,15 +17,20 @@ class DetailViewController: UITableViewController {
     var results = [HKQuantitySample]()
     var healthStore = HKHealthStore()
     var dateFormatter = NSDateFormatter()
-    var numberFormatter = NSNumberFormatter()
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.dateFormatter.dateFormat = "dd MMM yyyy HH:mm:ss"
         
-        self.refreshData()
+        // observe updates for this quantity type
+        let query = HKObserverQuery(sampleType: self.sampleType, predicate: nil, updateHandler: { (query, completionHandler, error) -> Void in
+            if (error == nil) {
+                self.refreshData()
+            }
+        })
+        
+        self.healthStore.executeQuery(query)
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,15 +48,22 @@ class DetailViewController: UITableViewController {
         return self.results.count
     }
     
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
 
-        // Configure the cell...
+        let sample = self.results[indexPath.row];
+
+        let doubleValue = sample.quantity.doubleValueForUnit(self.preferredUnit)
+        NSLog("doubleValue %1.2f", doubleValue)
+        
+        cell.textLabel!.text = "\(doubleValue) \(self.preferredUnit.unitString)"
+
+        let dateString = self.dateFormatter.stringFromDate(sample.startDate)
+        cell.detailTextLabel!.text = dateString
+
 
         return cell
     }
-    */
 
     // MARK: - Navigation
 
@@ -80,7 +92,21 @@ class DetailViewController: UITableViewController {
     // MARK: - PrivateMethods
     func refreshData() {
         NSLog("refreshData......")
+        let timeSortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)
+
+        var query = HKSampleQuery(sampleType: self.sampleType, predicate: nil, limit: 0,
+            sortDescriptors: [timeSortDescriptor]) { (query, objects, error) -> Void in
+                
+                NSLog("results handler.....")
+                if(error == nil) {
+                    self.results = objects as! [HKQuantitySample]
+                    NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                        self.tableView.reloadData()
+                    })
+                }
+        }
         
+        self.healthStore.executeQuery(query)
     }
 
 }

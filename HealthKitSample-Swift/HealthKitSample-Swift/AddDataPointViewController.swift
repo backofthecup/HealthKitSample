@@ -17,6 +17,7 @@ class AddDataPointViewController: UITableViewController {
     
     var quantityType: HKQuantityType!
     var preferredUnit: HKUnit!
+    var healthStore = HKHealthStore()
     
 
     override func viewDidLoad() {
@@ -34,18 +35,6 @@ class AddDataPointViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
-
-//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-//        return 1
-//    }
-//
-//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 1
-//    }
-
-
-
     // MARK: - IBActions
     @IBAction func editingChanged(sender: AnyObject) {
         var textField = sender as! UITextField
@@ -58,6 +47,22 @@ class AddDataPointViewController: UITableViewController {
     }
     
     @IBAction func saveTapped(sender: AnyObject) {
+        let doubleValue = (self.dataTextField.text as NSString).doubleValue
+        let quantity = HKQuantity(unit: self.preferredUnit, doubleValue: doubleValue)
+        
+        let date = NSDate()
+        
+        let quantitySample = HKQuantitySample(type: self.quantityType, quantity: quantity, startDate: date, endDate: date)
+        self.healthStore.saveObject(quantitySample, withCompletion: { (success, error) -> Void in
+            if (success) {
+                NSLog("Saved to healthkiit.....")
+                
+                NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                    self.navigationController?.popViewControllerAnimated(true)
+                })
+                
+            }
+        })
     }
     
     @IBAction func cancelTapped(sender: AnyObject) {
