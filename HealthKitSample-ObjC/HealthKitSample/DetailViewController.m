@@ -36,12 +36,17 @@
 
     // observe updates for this quantity type
     HKObserverQuery *query = [[HKObserverQuery alloc] initWithSampleType:self.sampleType predicate:nil updateHandler:^(HKObserverQuery *query, HKObserverQueryCompletionHandler completionHandler,NSError *error) {
-         if (!error) {
-             [self refreshData];
-         }
+        if (!error) {
+            NSLog(@"Oberserver fire for .... %@", query.sampleType.identifier);
+            [self refreshData];
+        }
+        
+        // call if HealthStore.enableBackgroundDelivery is turned on
+//        completionHandler();
      }];
     
     [self.healthStore executeQuery:query];
+    
 }
 
 - (void)didReceiveMemoryWarning {

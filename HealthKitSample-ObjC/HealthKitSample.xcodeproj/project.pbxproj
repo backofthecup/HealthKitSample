@@ -186,6 +186,9 @@
 						CreatedOnToolsVersion = 6.3.2;
 						DevelopmentTeam = TP8G35A237;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
 							com.apple.HealthKit = {
 								enabled = 1;
 							};

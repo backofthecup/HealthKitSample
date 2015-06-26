@@ -25,6 +25,7 @@ class DetailViewController: UITableViewController {
         
         // observe updates for this quantity type
         let query = HKObserverQuery(sampleType: self.sampleType, predicate: nil) { (query, completionHandler, error) -> Void in
+            NSLog("HelthKit Oberserver fired.....")
             if (error == nil) {
                 self.refreshData()
             }
@@ -96,7 +97,7 @@ class DetailViewController: UITableViewController {
             sortDescriptors: [timeSortDescriptor]) { (query, objects, error) -> Void in
                 
                 NSLog("results handler.....")
-                if(error == nil) {
+                if (error == nil) {
                     self.results = objects as! [HKQuantitySample]
                     NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
                         self.tableView.reloadData()
