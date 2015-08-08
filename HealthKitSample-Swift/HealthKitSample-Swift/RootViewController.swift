@@ -11,9 +11,9 @@ import HealthKit
 
 class RootViewController: UITableViewController {
 
-    var objects = [HKQuantityType]()
-    var preferredUnits = [NSObject : AnyObject]()
-    var healthStore: HKHealthStore = HKHealthStore()
+    private var objects = [HKQuantityType]()
+    private var preferredUnits = [NSObject : AnyObject]()
+    private var healthStore: HKHealthStore = HKHealthStore()
     
 
     override func awakeFromNib() {

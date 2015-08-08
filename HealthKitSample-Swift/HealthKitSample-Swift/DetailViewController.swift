@@ -14,9 +14,9 @@ class DetailViewController: UITableViewController {
     var sampleType : HKQuantityType!
     var preferredUnit: HKUnit!
     
-    var results = [HKQuantitySample]()
-    var healthStore = HKHealthStore()
-    var dateFormatter = NSDateFormatter()
+    private var results = [HKQuantitySample]()
+    private var healthStore = HKHealthStore()
+    private var dateFormatter = NSDateFormatter()
 
     override func viewDidLoad() {
         super.viewDidLoad()
