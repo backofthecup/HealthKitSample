@@ -89,7 +89,7 @@ class DetailViewController: UITableViewController {
     }
     
     // MARK: - PrivateMethods
-    func refreshData() {
+    private func refreshData() {
         NSLog("refreshData......")
         let timeSortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)
 
