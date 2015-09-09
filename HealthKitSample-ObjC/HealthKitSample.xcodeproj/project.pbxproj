@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		89190AE71B21275B00C57CA7 /* AddDataPointViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89190AE61B21275B00C57CA7 /* AddDataPointViewController.m */; };
+		8991773D1BA0ADE20083711A /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8991773C1BA0ADE20083711A /* HealthKit.framework */; };
 		89C8768D1B1FE48E00F21631 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C8768C1B1FE48E00F21631 /* DetailViewController.m */; };
 		89E1394D1B1F7A9500AB5F08 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E1394C1B1F7A9500AB5F08 /* main.m */; };
 		89E139501B1F7A9500AB5F08 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E1394F1B1F7A9500AB5F08 /* AppDelegate.m */; };
@@ -16,7 +17,6 @@
 		89E1395B1B1F7A9500AB5F08 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89E1395A1B1F7A9500AB5F08 /* Images.xcassets */; };
 		89E1395E1B1F7A9500AB5F08 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89E1395C1B1F7A9500AB5F08 /* LaunchScreen.xib */; };
 		89E1396A1B1F7A9600AB5F08 /* HealthKitSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E139691B1F7A9600AB5F08 /* HealthKitSampleTests.m */; };
-		89E139751B1F7ABA00AB5F08 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E139741B1F7ABA00AB5F08 /* HealthKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +32,7 @@
 /* Begin PBXFileReference section */
 		89190AE51B21275B00C57CA7 /* AddDataPointViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddDataPointViewController.h; sourceTree = "<group>"; };
 		89190AE61B21275B00C57CA7 /* AddDataPointViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDataPointViewController.m; sourceTree = "<group>"; };
+		8991773C1BA0ADE20083711A /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		89C8768B1B1FE48E00F21631 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		89C8768C1B1FE48E00F21631 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		89E139471B1F7A9500AB5F08 /* HealthKitSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthKitSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,7 +49,6 @@
 		89E139681B1F7A9600AB5F08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89E139691B1F7A9600AB5F08 /* HealthKitSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HealthKitSampleTests.m; sourceTree = "<group>"; };
 		89E139731B1F7ABA00AB5F08 /* HealthKitSample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HealthKitSample.entitlements; sourceTree = "<group>"; };
-		89E139741B1F7ABA00AB5F08 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89E139751B1F7ABA00AB5F08 /* HealthKit.framework in Frameworks */,
+				8991773D1BA0ADE20083711A /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,7 +73,7 @@
 		89E1393E1B1F7A9500AB5F08 = {
 			isa = PBXGroup;
 			children = (
-				89E139741B1F7ABA00AB5F08 /* HealthKit.framework */,
+				8991773C1BA0ADE20083711A /* HealthKit.framework */,
 				89E139491B1F7A9500AB5F08 /* HealthKitSample */,
 				89E139661B1F7A9600AB5F08 /* HealthKitSampleTests */,
 				89E139481B1F7A9500AB5F08 /* Products */,
@@ -307,7 +307,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -326,7 +327,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -350,7 +351,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -363,7 +365,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -378,6 +380,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = HealthKitSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -392,6 +395,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = HealthKitSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

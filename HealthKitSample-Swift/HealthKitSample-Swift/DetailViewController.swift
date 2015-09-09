@@ -25,10 +25,12 @@ class DetailViewController: UITableViewController {
         
         // observe updates for this quantity type
         let query = HKObserverQuery(sampleType: self.sampleType, predicate: nil) { (query, completionHandler, error) -> Void in
-            NSLog("HelthKit Oberserver fired.....")
+            NSLog("Observer fired for .... %@", query.sampleType.identifier);
             if (error == nil) {
                 self.refreshData()
             }
+            
+//            completionHandler()
 
         }
         
@@ -95,14 +97,13 @@ class DetailViewController: UITableViewController {
 
         var query = HKSampleQuery(sampleType: self.sampleType, predicate: nil, limit: 0,
             sortDescriptors: [timeSortDescriptor]) { (query, objects, error) -> Void in
-                
-                NSLog("results handler.....")
                 if (error == nil) {
                     self.results = objects as! [HKQuantitySample]
                     NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
                         self.tableView.reloadData()
                     })
                 }
+                NSLog("Results %@", self.results)
         }
         
         self.healthStore.executeQuery(query)

@@ -13,7 +13,7 @@ class RootViewController: UITableViewController {
 
     private var objects = [HKQuantityType]()
     private var preferredUnits = [NSObject : AnyObject]()
-    private var healthStore: HKHealthStore = HKHealthStore()
+    private var healthStore = HKHealthStore()
     
 
     override func awakeFromNib() {

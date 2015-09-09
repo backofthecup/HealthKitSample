@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		895ED0EC1B253B16009F2D45 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895ED0EB1B253B16009F2D45 /* RootViewController.swift */; };
-		895ED0EF1B253B78009F2D45 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 895ED0EE1B253B78009F2D45 /* HealthKit.framework */; };
 		895ED0F11B25F12C009F2D45 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895ED0F01B25F12C009F2D45 /* DetailViewController.swift */; };
 		895ED0F61B25F4CB009F2D45 /* AddDataPointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895ED0F51B25F4CB009F2D45 /* AddDataPointViewController.swift */; };
 		895ED0F91B25F9D9009F2D45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 895ED0F71B25F5D8009F2D45 /* Main.storyboard */; };
+		8991773B1BA0ACFD0083711A /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8991773A1BA0ACFD0083711A /* HealthKit.framework */; };
 		89E36E651B253766004C29E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E36E641B253766004C29E1 /* AppDelegate.swift */; };
 		89E36E6E1B253766004C29E1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89E36E6D1B253766004C29E1 /* Images.xcassets */; };
 		89E36E7D1B253766004C29E1 /* HealthKitSample_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E36E7C1B253766004C29E1 /* HealthKitSample_SwiftTests.swift */; };
@@ -30,10 +30,10 @@
 /* Begin PBXFileReference section */
 		895ED0EB1B253B16009F2D45 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		895ED0ED1B253B77009F2D45 /* HealthKitSample-Swift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "HealthKitSample-Swift.entitlements"; sourceTree = "<group>"; };
-		895ED0EE1B253B78009F2D45 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		895ED0F01B25F12C009F2D45 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		895ED0F51B25F4CB009F2D45 /* AddDataPointViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDataPointViewController.swift; sourceTree = "<group>"; };
 		895ED0F71B25F5D8009F2D45 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		8991773A1BA0ACFD0083711A /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		89E36E5F1B253766004C29E1 /* HealthKitSample-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HealthKitSample-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89E36E631B253766004C29E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89E36E641B253766004C29E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				895ED0EF1B253B78009F2D45 /* HealthKit.framework in Frameworks */,
+				8991773B1BA0ACFD0083711A /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,7 +65,7 @@
 		89E36E561B253766004C29E1 = {
 			isa = PBXGroup;
 			children = (
-				895ED0EE1B253B78009F2D45 /* HealthKit.framework */,
+				8991773A1BA0ACFD0083711A /* HealthKit.framework */,
 				89E36E611B253766004C29E1 /* HealthKitSample-Swift */,
 				89E36E791B253766004C29E1 /* HealthKitSample-SwiftTests */,
 				89E36E601B253766004C29E1 /* Products */,
@@ -272,7 +272,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -291,7 +292,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -316,7 +317,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -329,7 +331,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -344,6 +346,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "HealthKitSample-Swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -358,6 +361,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "HealthKitSample-Swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -368,6 +372,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
