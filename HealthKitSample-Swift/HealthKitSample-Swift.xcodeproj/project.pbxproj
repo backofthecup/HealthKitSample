@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -165,6 +165,7 @@
 		89E36E571B253766004C29E1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Eric Mansfield";
 				TargetAttributes = {
@@ -187,7 +188,7 @@
 				};
 			};
 			buildConfigurationList = 89E36E5A1B253766004C29E1 /* Build configuration list for PBXProject "HealthKitSample-Swift" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (

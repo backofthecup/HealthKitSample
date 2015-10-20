@@ -29,9 +29,6 @@ class DetailViewController: UITableViewController {
             if (error == nil) {
                 self.refreshData()
             }
-            
-//            completionHandler()
-
         }
         
         self.healthStore.executeQuery(query)
