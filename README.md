@@ -14,16 +14,14 @@ This sample project reads & writes data points to `HealthKit`. It uses 3 categor
 
 ## Examples
 
-To add more categories, modify the following lines accordingly in `MasterViewController` `viewDidLoad`:
+To add more categories, modify the following lines accordingly in `RootViewController` `viewDidLoad`:
 
 ````
 // create quantity types we care about
-HKQuantityType *weight = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierBodyMass];
-HKQuantityType *bloodGlucose = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierBloodGlucose];
-HKQuantityType *steps = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierStepCount];
+let weight = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBodyMass)
+let bloodGlucose = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBloodGlucose)
 
-// request authorization
-NSSet *shareTypes = [NSSet setWithObjects:weight, bloodGlucose, steps, nil];
+let healthKitTypes = Set<HKQuantityType>(arrayLiteral: weight!, bloodGlucose!)
 
 ````
 
