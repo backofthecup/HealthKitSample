@@ -27,7 +27,7 @@ class RootViewController: UITableViewController {
         let weight = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBodyMass)
         let bloodGlucose = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBloodGlucose)
         
-        let healthKitTypes = NSSet(array:[weight, bloodGlucose])
+        let healthKitTypes = Set<HKQuantityType>(arrayLiteral: weight!, bloodGlucose!)
 
         self.healthStore.requestAuthorizationToShareTypes(healthKitTypes as Set, readTypes:healthKitTypes as Set) { (success, error) -> Void in
             if (success) {
@@ -42,7 +42,7 @@ class RootViewController: UITableViewController {
             }
         }
         
-        self.objects = [weight, bloodGlucose]
+        self.objects = [weight!, bloodGlucose!]
     
     }
 
@@ -73,7 +73,7 @@ class RootViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) 
 
         let object = objects[indexPath.row] as HKQuantityType
         cell.textLabel!.text = object.identifier

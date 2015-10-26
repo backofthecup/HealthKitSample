@@ -37,10 +37,10 @@ class AddDataPointViewController: UITableViewController {
 
     // MARK: - IBActions
     @IBAction func editingChanged(sender: AnyObject) {
-        var textField = sender as! UITextField
-        let value = textField.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        let textField = sender as! UITextField
+        let value = textField.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
         
-        if (count(value) > 0) {
+        if (value.characters.count > 0) {
             self.saveButton.enabled = true
         }
         else {
@@ -49,7 +49,7 @@ class AddDataPointViewController: UITableViewController {
     }
     
     @IBAction func saveTapped(sender: AnyObject) {
-        let doubleValue = (self.dataTextField.text as NSString).doubleValue
+        let doubleValue = (self.dataTextField.text! as NSString).doubleValue
         let quantity = HKQuantity(unit: self.preferredUnit, doubleValue: doubleValue)
         
         let date = NSDate()
