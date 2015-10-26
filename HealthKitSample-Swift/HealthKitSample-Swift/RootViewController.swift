@@ -75,7 +75,7 @@ class RootViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) 
 
-        let object = objects[indexPath.row] as HKQuantityType
+        let object = self.objects[indexPath.row] as HKQuantityType
         cell.textLabel!.text = object.identifier
         return cell
     }

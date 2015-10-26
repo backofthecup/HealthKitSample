@@ -50,8 +50,7 @@ class DetailViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         let sample = self.results[indexPath.row];
 
         let doubleValue = sample.quantity.doubleValueForUnit(self.preferredUnit)
@@ -67,7 +66,7 @@ class DetailViewController: UITableViewController {
 
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var quantityType = self.sampleType as HKQuantityType
+        let quantityType = self.sampleType as HKQuantityType
         (segue.destinationViewController as! AddDataPointViewController).quantityType = quantityType
         (segue.destinationViewController as! AddDataPointViewController).preferredUnit = self.preferredUnit
     }
@@ -92,7 +91,7 @@ class DetailViewController: UITableViewController {
         NSLog("refreshData......")
         let timeSortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)
 
-        var query = HKSampleQuery(sampleType: self.sampleType, predicate: nil, limit: 0,
+        let query = HKSampleQuery(sampleType: self.sampleType, predicate: nil, limit: 0,
             sortDescriptors: [timeSortDescriptor]) { (query, objects, error) -> Void in
                 if (error == nil) {
                     self.results = objects as! [HKQuantitySample]
