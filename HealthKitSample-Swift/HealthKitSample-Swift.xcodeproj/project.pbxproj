@@ -14,11 +14,11 @@
 		8991773B1BA0ACFD0083711A /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8991773A1BA0ACFD0083711A /* HealthKit.framework */; };
 		89E36E651B253766004C29E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E36E641B253766004C29E1 /* AppDelegate.swift */; };
 		89E36E6E1B253766004C29E1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89E36E6D1B253766004C29E1 /* Images.xcassets */; };
-		89E36E7D1B253766004C29E1 /* HealthKitSample_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E36E7C1B253766004C29E1 /* HealthKitSample_SwiftTests.swift */; };
+		89F3B7B11BE53DA20096A8ED /* HealthKitSample_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F3B7B01BE53DA20096A8ED /* HealthKitSample_SwiftTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		89E36E771B253766004C29E1 /* PBXContainerItemProxy */ = {
+		89F3B7B31BE53DA20096A8ED /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 89E36E571B253766004C29E1 /* Project object */;
 			proxyType = 1;
@@ -38,9 +38,9 @@
 		89E36E631B253766004C29E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89E36E641B253766004C29E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89E36E6D1B253766004C29E1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		89E36E761B253766004C29E1 /* HealthKitSample-SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HealthKitSample-SwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		89E36E7B1B253766004C29E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		89E36E7C1B253766004C29E1 /* HealthKitSample_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitSample_SwiftTests.swift; sourceTree = "<group>"; };
+		89F3B7AE1BE53DA20096A8ED /* HealthKitSample-SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HealthKitSample-SwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		89F3B7B01BE53DA20096A8ED /* HealthKitSample_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitSample_SwiftTests.swift; sourceTree = "<group>"; };
+		89F3B7B21BE53DA20096A8ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +52,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		89E36E731B253766004C29E1 /* Frameworks */ = {
+		89F3B7AB1BE53DA20096A8ED /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -67,7 +67,7 @@
 			children = (
 				8991773A1BA0ACFD0083711A /* HealthKit.framework */,
 				89E36E611B253766004C29E1 /* HealthKitSample-Swift */,
-				89E36E791B253766004C29E1 /* HealthKitSample-SwiftTests */,
+				89F3B7AF1BE53DA20096A8ED /* HealthKitSample-SwiftTests */,
 				89E36E601B253766004C29E1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -76,7 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				89E36E5F1B253766004C29E1 /* HealthKitSample-Swift.app */,
-				89E36E761B253766004C29E1 /* HealthKitSample-SwiftTests.xctest */,
+				89F3B7AE1BE53DA20096A8ED /* HealthKitSample-SwiftTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,21 +104,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		89E36E791B253766004C29E1 /* HealthKitSample-SwiftTests */ = {
+		89F3B7AF1BE53DA20096A8ED /* HealthKitSample-SwiftTests */ = {
 			isa = PBXGroup;
 			children = (
-				89E36E7C1B253766004C29E1 /* HealthKitSample_SwiftTests.swift */,
-				89E36E7A1B253766004C29E1 /* Supporting Files */,
+				89F3B7B01BE53DA20096A8ED /* HealthKitSample_SwiftTests.swift */,
+				89F3B7B21BE53DA20096A8ED /* Info.plist */,
 			);
 			path = "HealthKitSample-SwiftTests";
-			sourceTree = "<group>";
-		};
-		89E36E7A1B253766004C29E1 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				89E36E7B1B253766004C29E1 /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,22 +133,22 @@
 			productReference = 89E36E5F1B253766004C29E1 /* HealthKitSample-Swift.app */;
 			productType = "com.apple.product-type.application";
 		};
-		89E36E751B253766004C29E1 /* HealthKitSample-SwiftTests */ = {
+		89F3B7AD1BE53DA20096A8ED /* HealthKitSample-SwiftTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 89E36E831B253766004C29E1 /* Build configuration list for PBXNativeTarget "HealthKitSample-SwiftTests" */;
+			buildConfigurationList = 89F3B7B51BE53DA20096A8ED /* Build configuration list for PBXNativeTarget "HealthKitSample-SwiftTests" */;
 			buildPhases = (
-				89E36E721B253766004C29E1 /* Sources */,
-				89E36E731B253766004C29E1 /* Frameworks */,
-				89E36E741B253766004C29E1 /* Resources */,
+				89F3B7AA1BE53DA20096A8ED /* Sources */,
+				89F3B7AB1BE53DA20096A8ED /* Frameworks */,
+				89F3B7AC1BE53DA20096A8ED /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				89E36E781B253766004C29E1 /* PBXTargetDependency */,
+				89F3B7B41BE53DA20096A8ED /* PBXTargetDependency */,
 			);
 			name = "HealthKitSample-SwiftTests";
 			productName = "HealthKitSample-SwiftTests";
-			productReference = 89E36E761B253766004C29E1 /* HealthKitSample-SwiftTests.xctest */;
+			productReference = 89F3B7AE1BE53DA20096A8ED /* HealthKitSample-SwiftTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -181,8 +173,8 @@
 							};
 						};
 					};
-					89E36E751B253766004C29E1 = {
-						CreatedOnToolsVersion = 6.3.2;
+					89F3B7AD1BE53DA20096A8ED = {
+						CreatedOnToolsVersion = 7.0.1;
 						TestTargetID = 89E36E5E1B253766004C29E1;
 					};
 				};
@@ -201,7 +193,7 @@
 			projectRoot = "";
 			targets = (
 				89E36E5E1B253766004C29E1 /* HealthKitSample-Swift */,
-				89E36E751B253766004C29E1 /* HealthKitSample-SwiftTests */,
+				89F3B7AD1BE53DA20096A8ED /* HealthKitSample-SwiftTests */,
 			);
 		};
 /* End PBXProject section */
@@ -216,7 +208,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		89E36E741B253766004C29E1 /* Resources */ = {
+		89F3B7AC1BE53DA20096A8ED /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -237,21 +229,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		89E36E721B253766004C29E1 /* Sources */ = {
+		89F3B7AA1BE53DA20096A8ED /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89E36E7D1B253766004C29E1 /* HealthKitSample_SwiftTests.swift in Sources */,
+				89F3B7B11BE53DA20096A8ED /* HealthKitSample_SwiftTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		89E36E781B253766004C29E1 /* PBXTargetDependency */ = {
+		89F3B7B41BE53DA20096A8ED /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 89E36E5E1B253766004C29E1 /* HealthKitSample-Swift */;
-			targetProxy = 89E36E771B253766004C29E1 /* PBXContainerItemProxy */;
+			targetProxy = 89F3B7B31BE53DA20096A8ED /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -372,38 +364,28 @@
 			};
 			name = Release;
 		};
-		89E36E841B253766004C29E1 /* Debug */ = {
+		89F3B7B61BE53DA20096A8ED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				INFOPLIST_FILE = "HealthKitSample-SwiftTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.appsontheside.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.appsontheside.HealthKitSample-SwiftTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HealthKitSample-Swift.app/HealthKitSample-Swift";
 			};
 			name = Debug;
 		};
-		89E36E851B253766004C29E1 /* Release */ = {
+		89F3B7B71BE53DA20096A8ED /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				INFOPLIST_FILE = "HealthKitSample-SwiftTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.appsontheside.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.appsontheside.HealthKitSample-SwiftTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HealthKitSample-Swift.app/HealthKitSample-Swift";
 			};
@@ -430,14 +412,13 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		89E36E831B253766004C29E1 /* Build configuration list for PBXNativeTarget "HealthKitSample-SwiftTests" */ = {
+		89F3B7B51BE53DA20096A8ED /* Build configuration list for PBXNativeTarget "HealthKitSample-SwiftTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				89E36E841B253766004C29E1 /* Debug */,
-				89E36E851B253766004C29E1 /* Release */,
+				89F3B7B61BE53DA20096A8ED /* Debug */,
+				89F3B7B71BE53DA20096A8ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -11,11 +11,10 @@ import HealthKit
 
 class RootViewController: UITableViewController {
 
-    private var objects = [HKQuantityType]()
+    private var objects = [HKQuantityType!]()
     private var preferredUnits = [NSObject : AnyObject]()
     private var healthStore = HKHealthStore()
     
-
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -42,7 +41,7 @@ class RootViewController: UITableViewController {
             }
         }
         
-        self.objects = [weight!, bloodGlucose!]
+        self.objects = [weight, bloodGlucose]
     
     }
 
@@ -63,7 +62,6 @@ class RootViewController: UITableViewController {
     }
 
     // MARK: - Table View
-
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }

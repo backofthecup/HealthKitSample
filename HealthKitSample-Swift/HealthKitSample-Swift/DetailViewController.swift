@@ -90,9 +90,7 @@ class DetailViewController: UITableViewController {
     private func refreshData() {
         NSLog("refreshData......")
         let timeSortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)
-
-        let query = HKSampleQuery(sampleType: self.sampleType, predicate: nil, limit: 0,
-            sortDescriptors: [timeSortDescriptor]) { (query, objects, error) -> Void in
+        let query = HKSampleQuery(sampleType: self.sampleType, predicate: nil, limit: 0, sortDescriptors: [timeSortDescriptor]) { (query, objects, error) -> Void in
                 if (error == nil) {
                     self.results = objects as! [HKQuantitySample]
                     NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in

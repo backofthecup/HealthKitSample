@@ -40,12 +40,7 @@ class AddDataPointViewController: UITableViewController {
         let textField = sender as! UITextField
         let value = textField.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
         
-        if (value.characters.count > 0) {
-            self.saveButton.enabled = true
-        }
-        else {
-            self.saveButton.enabled = false
-        }
+        self.saveButton.enabled = (value.characters.count > 0)
     }
     
     @IBAction func saveTapped(sender: AnyObject) {
