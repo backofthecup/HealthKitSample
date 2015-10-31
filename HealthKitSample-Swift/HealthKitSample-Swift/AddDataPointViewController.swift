@@ -44,13 +44,13 @@ class AddDataPointViewController: UITableViewController {
     }
     
     @IBAction func saveTapped(sender: AnyObject) {
-        let doubleValue = (self.dataTextField.text! as NSString).doubleValue
+        guard let doubleValue = Double(self.dataTextField.text!) else {
+            return
+        }
+        
         let quantity = HKQuantity(unit: self.preferredUnit, doubleValue: doubleValue)
-        
         let date = NSDate()
-        
         let quantitySample = HKQuantitySample(type: self.quantityType, quantity: quantity, startDate: date, endDate: date)
-        
         
         self.healthStore.saveObject(quantitySample) { (success, error) -> Void in
             if (success) {
