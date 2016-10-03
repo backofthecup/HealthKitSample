@@ -25,7 +25,7 @@ class DetailViewController: UITableViewController {
         
         // observe updates for this quantity type
         let query = HKObserverQuery(sampleType: self.sampleType, predicate: nil) { (query, completionHandler, error) -> Void in
-            NSLog("Observer fired for .... %@", query.sampleType.identifier);
+            NSLog("Observer fired for .... %@", query.sampleType!.identifier);
             if (error == nil) {
                 self.refreshData()
             }
